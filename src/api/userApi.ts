@@ -8,7 +8,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const useGetUser = () => {
   const { getAccessTokenSilently } = useAuth0();
 
-  const getUserRequest = async (): Promise<User> => {
+  const getUserRequest = async (): Promise<any> => {
     const accessToken = await getAccessTokenSilently();
 
     const response = await fetch(`${API_BASE_URL}/api/user`, {
@@ -16,6 +16,7 @@ export const useGetUser = () => {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
     });
 
