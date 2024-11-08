@@ -2,7 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from './ui/button';
 import LoadingButton from './LoadingButton';
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog';
 import { UserFormData } from '@/forms/user-profile-form/UserProfileForm';
 import { useGetUser } from '@/api/userApi';
 
@@ -51,7 +51,9 @@ const CheckoutButton = ({ disabled, isLoading }: Props) => {
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50">
-        <div>Redirecting to home page</div>
+        <DialogTitle>
+          Thankyou for ordering!! we will be in contact with you shortly
+        </DialogTitle>
         <Button>
           <Link to={'/'}>Go To Home</Link>
         </Button>
